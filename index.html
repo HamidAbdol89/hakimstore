@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HakimStore | Ecommerce Website Design</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha384-c2G3QDkq5wCBqELXuEXfGWvV9Iyop5jfsXXsHA4DjDLZvahNOgYLvD6+Zfbsk2dH" crossorigin="anonymous">
+
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="images/logo.png" alt="Logo" width="300px">
+                </div>
+                <ul class="menu">
+                    <li><a href="#">Trang chủ</a></li>
+                    <li><a href="#">Các sản phẩm</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="contact.html">Liên hệ</a></li>
+                    <li class="account">
+                        <a href="#" class="account-link">Tài khoản</a>
+                        <div class="account-dropdown">
+                            <ul class="account-options">
+                                <li><a href="login.html">Đăng nhập</a></li>
+                                <li><a href="register.html">Đăng ký</a></li>
+                                <li><a href="management-account.html">Quản lý tài khoản</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                <div class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+            </nav>
+            <div class="row">
+                <div class="col-2">
+                    <h1>Mang đến cho buổi cầu nguyện của bạn<br> một phong cách mới!</h1>
+                    <p>Allah đã qui định cho con người trang hoàng cho đẹp trên y phục của y<br> đó là biểu hiện sự tôn trọng và yêu quý ân huệ của Allah. </p>
+                    <a href="#" class="btn">Khám phá ngay &#8594;</a>
+                </div>
+                <div class="col-2">
+                    <img src="images/image1.png" alt="Product Image">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="loginOverlay" class="overlay">
+        <!-- Nội dung của trang login -->
+        
+    </div>
+    
+    <div id="registerOverlay" class="overlay">
+        <!-- Nội dung của trang register -->
+    </div>
+    
+    <div id="managerOverlay" class="overlay">
+        <!-- Nội dung của trang manager -->
+    </div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var accountLink = document.querySelector(".account-link");
+            var loginOverlay = document.getElementById("loginOverlay");
+            var registerOverlay = document.getElementById("registerOverlay");
+            var managerOverlay = document.getElementById("managerOverlay");
+    
+            // Xử lý khi người dùng nhấn vào liên kết tài khoản
+            accountLink.addEventListener("click", function(event) {
+                event.preventDefault(); // Ngăn chặn hành vi mặc định của thẻ <a>
+    
+                // Kiểm tra xem overlay nào cần hiển thị dựa trên href của liên kết
+                if (event.target.href.endsWith("login.html")) {
+                    // Hiển thị overlay đăng nhập và ẩn các overlay khác
+                    loginOverlay.style.display = "block";
+                    registerOverlay.style.display = "none";
+                    managerOverlay.style.display = "none";
+                } else if (event.target.href.endsWith("register.html")) {
+                    // Hiển thị overlay đăng ký và ẩn các overlay khác
+                    loginOverlay.style.display = "none";
+                    registerOverlay.style.display = "block";
+                    managerOverlay.style.display = "none";
+                } else if (event.target.href.endsWith("account-management.html")) {
+                    // Hiển thị overlay quản lý tài khoản và ẩn các overlay khác
+                    loginOverlay.style.display = "none";
+                    registerOverlay.style.display = "none";
+                    managerOverlay.style.display = "block";
+                }
+            });
+        });
+    </script>
+    
+
+
+
+
+    
+    
+    
+
+
+    <section id="contact" class="contact hidden">
+        <div class="container">
+            <h2 class="section-title">Liên hệ</h2>
+            <div class="contact-form">
+                <form action="">
+                    <div class="form-group">
+                        <label for="name">Họ và tên:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Nội dung:</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Gửi</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <!-- Footer content goes here -->
+        
+        <div class="categories">
+            <div class="small-container">
+                <div class="row">
+                    <div class="col-3">
+                        <img src="images/category-1.jpg">
+                    </div>
+                    <div class="col-3">
+                        <img src="images/category-2.jpg">
+                    </div>
+                    <div class="col-3">
+                        <img src="images/category-3.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+         <div class="small-container">
+            <h2 class="title">Sản phẩm đặc trưng</h2>
+            <div class="row">
+                <div class="col-4">
+                    <img src="images/product-1.jpg">
+                    <h4>Hijab Red</h4>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <p>$50.00</p>
+                </div>
+                <div class="col-4">
+                    <img src="images/product-2.jpg">
+                    <h4>Hijab Red</h4>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-o"></i>
+                        <i class="fas fa-star-o"></i>
+                    </div>
+                    <p>$50.00</p>
+                </div>
+                <div class="col-4">
+                    <img src="images/product-3.jpg">
+                    <h4>Hijab Red</h4>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-o"></i>
+                    </div>
+                    <p>$50.00</p>
+                </div>
+                <div class="col-4">
+                    <img src="images/product-4.jpg">
+                    <h4>Hijab Red</h4>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-o"></i>
+                    </div>
+                    <p>$50.00</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+   
+</body>
+</html>
