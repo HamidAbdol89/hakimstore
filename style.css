@@ -55,8 +55,8 @@ p {
 }
 
 .col-2 {
-    flex-basis: 50%;
-    max-width: 50%;
+    flex-basis: 100%;
+    text-align: center; /* Trung tâm nội dung */
     padding: 0 15px;
 }
 
@@ -171,8 +171,11 @@ h4 {
 
 .header {
     background-color: #f8f9fa;
-    padding: 100px 0;
+    padding: 70px 0;
     text-align: center;
+}
+.header .row {
+    margin-top: 50px; /* Giảm margin-top */
 }
 
 .header h1 {
@@ -318,11 +321,14 @@ textarea {
 }
 
 /* Các media query cho các thiết bị di động */
-@media only screen and (max-width: 768px) {
-    /* Điều chỉnh kích thước hoặc bố cục cho các thiết bị di động */
+@media screen and (max-width: 768px) {
     .col-2 {
-        flex-basis: 100%;
-        text-align: center;
+        flex-basis: 50%;
+        max-width: 50%;
+        padding: 0 15px;
     }
-    /* Thêm các quy tắc CSS khác tùy thuộc vào nhu cầu của trang web */
+    /* Ẩn phần thứ tự đảo ngược cột */
+    .col-2 {
+        order: initial;
+    }
 }
