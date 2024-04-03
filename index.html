@@ -9,7 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha384-c2G3QDkq5wCBqELXuEXfGWvV9Iyop5jfsXXsHA4DjDLZvahNOgYLvD6+Zfbsk2dH" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/my-login.css">
 </head>
 <body>
     <header class="header">
@@ -51,60 +52,6 @@
         </div>
     </header>
 
-    <div id="loginOverlay" class="overlay">
-        <!-- Nội dung của trang login -->
-        
-    </div>
-    
-    <div id="registerOverlay" class="overlay">
-        <!-- Nội dung của trang register -->
-    </div>
-    
-    <div id="managerOverlay" class="overlay">
-        <!-- Nội dung của trang manager -->
-    </div>
-    
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var accountLink = document.querySelector(".account-link");
-            var loginOverlay = document.getElementById("loginOverlay");
-            var registerOverlay = document.getElementById("registerOverlay");
-            var managerOverlay = document.getElementById("managerOverlay");
-    
-            // Xử lý khi người dùng nhấn vào liên kết tài khoản
-            accountLink.addEventListener("click", function(event) {
-                event.preventDefault(); // Ngăn chặn hành vi mặc định của thẻ <a>
-    
-                // Kiểm tra xem overlay nào cần hiển thị dựa trên href của liên kết
-                if (event.target.href.endsWith("login.html")) {
-                    // Hiển thị overlay đăng nhập và ẩn các overlay khác
-                    loginOverlay.style.display = "block";
-                    registerOverlay.style.display = "none";
-                    managerOverlay.style.display = "none";
-                } else if (event.target.href.endsWith("register.html")) {
-                    // Hiển thị overlay đăng ký và ẩn các overlay khác
-                    loginOverlay.style.display = "none";
-                    registerOverlay.style.display = "block";
-                    managerOverlay.style.display = "none";
-                } else if (event.target.href.endsWith("account-management.html")) {
-                    // Hiển thị overlay quản lý tài khoản và ẩn các overlay khác
-                    loginOverlay.style.display = "none";
-                    registerOverlay.style.display = "none";
-                    managerOverlay.style.display = "block";
-                }
-            });
-        });
-    </script>
-    
-
-
-
-
-    
-    
-    
-
-
     <section id="contact" class="contact hidden">
         <div class="container">
             <h2 class="section-title">Liên hệ</h2>
@@ -127,9 +74,112 @@
             </div>
         </div>
     </section>
+
+    <div id="loginOverlay" class="overlay">
+        <!-- Nội dung của trang login -->
+    </div>
+    
+    <div id="registerOverlay" class="overlay">
+        <!-- Nội dung của trang register -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                var accountLink = document.querySelector(".account-link");
+                var loginOverlay = document.getElementById("loginOverlay");
+                var registerOverlay = document.getElementById("registerOverlay");
+                var managerOverlay = document.getElementById("managerOverlay");
+        
+                // Xử lý khi người dùng nhấn vào liên kết tài khoản
+                accountLink.addEventListener("click", function(event) {
+                    event.preventDefault(); // Ngăn chặn hành vi mặc định của thẻ <a>
+        
+                    // Kiểm tra xem overlay nào cần hiển thị dựa trên href của liên kết
+                    if (event.target.href.endsWith("login.html")) {
+                        // Hiển thị overlay đăng nhập và ẩn các overlay khác
+                        loginOverlay.style.display = "block";
+                        registerOverlay.style.display = "none";
+                        managerOverlay.style.display = "none";
+                    } else if (event.target.href.endsWith("register.html")) {
+                        // Hiển thị overlay đăng ký và ẩn các overlay khác
+                        loginOverlay.style.display = "none";
+                        registerOverlay.style.display = "block";
+                        managerOverlay.style.display = "none";
+                    } else if (event.target.href.endsWith("account-management.html")) {
+                        // Hiển thị overlay quản lý tài khoản và ẩn các overlay khác
+                        loginOverlay.style.display = "none";
+                        registerOverlay.style.display = "none";
+                        managerOverlay.style.display = "block";
+                    }
+                });
+            });
+        </script>
+        
+    
+    
+        <body class="my-login-page">
+        <section class="h-100">
+            <div class="container h-100">
+                <div class="row justify-content-md-center h-100">
+                    <div class="card-wrapper">
+                        <div class="brand">
+                            <img src="img/logo.jpg" alt="logo">
+                        </div>
+                        <div class="card fat">
+                            <div class="card-body">
+                                <h4 class="card-title">Login</h4>
+                                <form method="POST" class="my-login-validation" novalidate="">
+                                    <div class="form-group">
+                                        <label for="email">E-Mail Address</label>
+                                        <input id="email" type="email" class="form-control" name="email" value="" required autofocus>
+                                        <div class="invalid-feedback">
+                                            Email is invalid
+                                        </div>
+                                    </div>
+    
+                                    <div class="form-group">
+                                        <label for="password">Password
+                                            <a href="forgot.html" class="float-right">
+                                                Forgot Password?
+                                            </a>
+                                        </label>
+                                        <input id="password" type="password" class="form-control" name="password" required data-eye>
+                                        <div class="invalid-feedback">
+                                            Password is required
+                                        </div>
+                                    </div>
+    
+                                    <div class="form-group">
+                                        <div class="custom-checkbox custom-control">
+                                            <input type="checkbox" name="remember" id="remember" class="custom-control-input">
+                                            <label for="remember" class="custom-control-label">Remember Me</label>
+                                        </div>
+                                    </div>
+    
+                                    <div class="form-group m-0">
+                                        <button type="submit" class="btn btn-primary btn-block">
+                                            Login
+                                        </button>
+                                    </div>
+                                    <div class="mt-4 text-center">
+                                        Don't have an account? <a href="register.html">Create One</a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="footer">
+                            Copyright &copy; 2017 &mdash; Your Company 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="managerOverlay" class="overlay">
+        <!-- Nội dung của trang manager -->
+    </div>
+
     <footer>
         <!-- Footer content goes here -->
-        
         <div class="categories">
             <div class="small-container">
                 <div class="row">
@@ -198,10 +248,14 @@
                 </div>
             </div>
         </div>
+        <!-- Đóng thẻ footer -->
     </footer>
 
+    <!-- Các liên kết JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="js/my-login.js"></script>
     <script src="script.js"></script>
-
-   
 </body>
 </html>
