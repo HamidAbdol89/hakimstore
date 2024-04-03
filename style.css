@@ -317,3 +317,12 @@ textarea {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
+/* Các media query cho các thiết bị di động */
+@media only screen and (max-width: 768px) {
+    /* Điều chỉnh kích thước hoặc bố cục cho các thiết bị di động */
+    .col-2 {
+        flex-basis: 100%;
+        text-align: center;
+    }
+    /* Thêm các quy tắc CSS khác tùy thuộc vào nhu cầu của trang web */
+}
